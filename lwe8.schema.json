@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Config for Lwe8",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "devserver": {
+      "type": "object",
+      "properties": {
+        "static": {
+          "type": "string"
+        },
+        "port": {
+          "type": "number"
+        },
+        "open": {
+          "type": "boolean"
+        }
+      }
+    },
+    "appdir": {
+      "type": "string"
+    },
+    "publicdir": {
+      "type": "string"
+    },
+    "postsdir": {
+      "type": "string"
+    }
+  }
+}

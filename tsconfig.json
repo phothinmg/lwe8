@@ -14,9 +14,9 @@
     "jsx": "react",
     "incremental": true,
     "declaration": true,
-    "outDir": "./.lwe8",
+    "outDir": "./dist/config",
     "sourceMap": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/config/index.ts"],
   "exclude": ["node_modules"]
 }

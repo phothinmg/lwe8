@@ -8,16 +8,23 @@ const __dirname = path.dirname(__filename);
 
 const serverConig = {
   mode: "development",
-  target: "node",
   devtool: "inline-source-map",
+  target: "node",
   node: {
     __dirname: false,
   },
   externals: [nodeExternals()],
-  entry: "./src/server/index.tsx",
+  entry: "./src/config/index.ts",
   output: {
-    path: path.resolve(__dirname, "./.lwe8/server"),
+    path: path.resolve(__dirname, "./dist/config"),
     filename: "index.js",
+    chunkFilename: "[name].chunk.js", // Enable dynamic import
+    module: true,
+    clean: true,
+    libraryTarget: "module",
+  },
+  experiments: {
+    outputModule: true,
   },
   module: {
     rules: [
@@ -48,6 +55,7 @@ const serverConig = {
                 ],
               ],
               plugins: [
+                "@babel/plugin-syntax-top-level-await",
                 "@babel/plugin-transform-typescript",
                 [
                   "@babel/plugin-transform-react-jsx",
@@ -79,6 +87,15 @@ const serverConig = {
       ".mjs": [".mjs", ".mts"],
     },
   },
+  stats: {
+    errorDetails: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+  plugins: [],
 };
 
 export default serverConig;

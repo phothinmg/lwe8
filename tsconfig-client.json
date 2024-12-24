@@ -9,8 +9,8 @@
     "jsx": "react",
     "esModuleInterop": true,
     "target": "ESNext",
-    "outDir": "./dist/config",
+    "outDir": "./web",
     "module": "ESNext"
   },
-  "include": ["./src/config/**/*"]
+  "include": ["./client/**/*"]
 }
