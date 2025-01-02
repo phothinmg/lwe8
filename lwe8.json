@@ -1,6 +1,12 @@
 {
   "$schema": "./lwe8.schema.json",
-  "metadata": {
-    "title": "Pho Thin"
+  "routes": {
+    "pages": {
+      "/": "./app/index.md",
+      "/about": "./app/about.md"
+    },
+    "posts": {
+      "/blog/post-one": "./app/blog/post-one.md"
+    }
   }
 }

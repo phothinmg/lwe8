@@ -4,41 +4,29 @@
   "type": "object",
   "properties": {
     "metadata": {
+      "type": "object"
+    },
+    "routes": {
       "type": "object",
+      "description": "Define routes for blog.",
       "properties": {
-        "title": {
-          "type": "string"
+        "pages": {
+          "type": "object",
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          }
         },
-        "keywords": {
-          "type": "array"
-        },
-        "description": {
-          "type": "string"
+        "posts": {
+          "type": "object",
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          }
         }
       }
-    },
-    "devserver": {
-      "type": "object",
-      "properties": {
-        "static": {
-          "type": "string"
-        },
-        "port": {
-          "type": "number"
-        },
-        "open": {
-          "type": "boolean"
-        }
-      }
-    },
-    "appdir": {
-      "type": "string"
-    },
-    "publicdir": {
-      "type": "string"
-    },
-    "postsdir": {
-      "type": "string"
     }
   }
 }
